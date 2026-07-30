@@ -3,129 +3,255 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amrik Singh | Journalist & Digital Storyteller</title>
+  <title>Amrik Explains | Hindi Journalism & Analysis</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
-    
-    header { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 60px 20px; text-align: center; border-bottom: 2px solid #38bdf8; }
-    header h1 { font-size: 2.5rem; color: #38bdf8; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
-    .badge { background: #0284c7; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin-top: 15px; }
-
-    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-    
-    .section { background: #1e293b; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); }
-    .section h2 { color: #38bdf8; border-bottom: 2px solid #334155; padding-bottom: 10px; margin-bottom: 20px; font-size: 1.5rem; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .card { background: #0f172a; padding: 20px; border-radius: 8px; border: 1px solid #334155; }
-    .card h3 { color: #f1f5f9; margin-bottom: 8px; }
-    .card p { color: #94a3b8; font-size: 0.95rem; }
-
-    .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill-tag { background: #334155; color: #38bdf8; padding: 8px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; }
-
-    .timeline { border-left: 2px solid #38bdf8; padding-left: 20px; margin-left: 10px; }
-    .timeline-item { margin-bottom: 20px; position: relative; }
-    .timeline-item::before { content: ''; width: 12px; height: 12px; background: #38bdf8; border-radius: 50%; position: absolute; left: -27px; top: 5px; }
-    .timeline-item h4 { color: #f8fafc; }
-    .timeline-item span { color: #64748b; font-size: 0.85rem; }
-
-    .btn { display: inline-block; background: #0284c7; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
-    .btn:hover { background: #0369a1; }
-
-    footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem; border-top: 1px solid #1e293b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fafafa;
+      color: #111111;
+      line-height: 1.6;
+      padding: 0 15px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .nav-bar {
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #000;
+      text-decoration: none;
+    }
+    .logo span { color: #e11d48; }
+    .nav-links {
+      font-size: 14px;
+      color: #555;
+    }
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    .hero-subtitle {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #e11d48;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #475569;
+      max-width: 650px;
+      margin: 0 auto 25px auto;
+    }
+    .subscribe-box {
+      background: #f1f5f9;
+      padding: 12px 24px;
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+    }
+    .main-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .content-area {
+      flex: 2;
+      min-width: 300px;
+    }
+    .sidebar-area {
+      flex: 1;
+      min-width: 260px;
+      border-left: 1px solid #e2e8f0;
+      padding-left: 25px;
+    }
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+    .post-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .post-meta {
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .post-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .post-snippet {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 15px;
+    }
+    .post-footer {
+      font-size: 12px;
+      color: #e11d48;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .profile-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 18px;
+      margin-bottom: 25px;
+    }
+    .profile-card h3 {
+      font-size: 16px;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .profile-card p {
+      font-size: 13px;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .badge {
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .footer {
+      border-top: 1px solid #e2e8f0;
+      margin-top: 40px;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    @media (max-width: 768px) {
+      .sidebar-area { border-left: none; padding-left: 0; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Amrik Singh</h1>
-    <p>Hindi Journalism Aspirant | Digital Storyteller | Research & Content Creator</p>
-    <div class="badge">Seeking Journalism Internships & Roles</div>
-  </header>
-
   <div class="container">
-    
-    <!-- About Me -->
-    <div class="section">
-      <h2>About Me</h2>
-      <p>Main History aur Sociology se Post-Graduate hoon, jisko Indian Polity, Governance, aur Current Affairs ki gehri research-based samajh hai (UPSC Prep Background). Filhaal main YouTube aur Instagram par storytelling format mein current issues par explanatory short videos create kar raha hoon. Mera goal Hindi Digital Journalism mein ek impactful Journalist / Video Producer banna hai.</p>
+    <div class="nav-bar">
+      <a href="#" class="logo">AMRIK <span>EXPLAINS</span></a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Archive</a>
+        <a href="#">About</a>
+      </div>
     </div>
 
-    <!-- What I Do / Current Work -->
-    <div class="section">
-      <h2>Current Focus & Portfolio</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Digital Storytelling</h3>
-          <p>YouTube aur Instagram par Current News, Geo-politics aur Social Issues par engaging short explainer videos banana.</p>
+    <div class="hero">
+      <div class="hero-subtitle">Independent Journalism & Ground Analysis</div>
+      <h1>Amrik Explains Substack Newsletter</h1>
+      <p>Current Affairs, History, Polity aur Social Issues par in-depth investigative, research-backed aur storytelling style articles.</p>
+      <div class="subscribe-box">📧 Enter your email to subscribe to Amrik Explains</div>
+    </div>
+
+    <div class="main-layout">
+      <div class="content-area">
+        <div class="section-title">Latest Articles / Investigation</div>
+
+        <div class="post-card">
+          <div class="post-meta">JULY 2026 • 6 MIN READ • AMRIK SINGH</div>
+          <div class="post-title">Understanding Parliament Operations: Bills, Debates, and Public Accountability</div>
+          <div class="post-snippet">UPSC research foundation aur Polity background ke zariye Lok Sabha aur Rajya Sabha ke legislative procedures ka deep-dive analysis. Kaise banta hai kanoon aur kya hota hai aam janta par iska asar?</div>
+          <a href="#" class="post-footer">Read Full Article →</a>
         </div>
-        <div class="card">
-          <h3>Video Editing</h3>
-          <p>Adobe Premiere Pro aur DaVinci Resolve par video editing, audio mixing, aur visual editing seekhna aur apply karna.</p>
+
+        <div class="post-card">
+          <div class="post-meta">JUNE 2026 • 8 MIN READ • AMRIK SINGH</div>
+          <div class="post-title">Historical Perspectives on Modern Geo-Politics: Connecting the Dots</div>
+          <div class="post-snippet">History aur Sociology M.A. lens se dekhein aaj ke global conflicts aur Indian diplomacy ko. Ek grounded storytelling perspective jo news headlines ke piche ka pura sach samjhaye.</div>
+          <a href="#" class="post-footer">Read Full Article →</a>
         </div>
-        <div class="card">
-          <h3>Research & Scriptwriting</h3>
-          <p>Polity, History aur Sociology background ke saath facts-checked Hindi news scripts aur explainer content likhna.</p>
+
+        <div class="post-card">
+          <div class="post-meta">MAY 2026 • 5 MIN READ • AMRIK SINGH</div>
+          <div class="post-title">Digital Storytelling in Hindi Media: Why Visual News Needs Ground Research</div>
+          <div class="post-snippet">Adobe Premiere Pro aur DaVinci Resolve ke tools ke saath kaise ek video journalist factual, investigative aur visually engaging storytelling kar sakta hai.</div>
+          <a href="#" class="post-footer">Read Full Article →</a>
+        </div>
+      </div>
+
+      <div class="sidebar-area">
+        <div class="section-title">Author</div>
+        
+        <div class="profile-card">
+          <h3>Amrik Singh</h3>
+          <p>Independent Hindi Multimedia Journalist, Video Producer & Digital Storyteller.</p>
+          <p><strong>Background:</strong> M.A. Sociology & History (IGNOU) | UPSC Prep Foundation | Video Editing (Premiere / DaVinci).</p>
+          <div class="badge-list">
+            <span class="badge">Hindi Journalism</span>
+            <span class="badge">Polity Analysis</span>
+            <span class="badge">Research</span>
+            <span class="badge">Video Explainer</span>
+          </div>
+        </div>
+
+        <div class="section-title">Connect</div>
+        <div class="profile-card">
+          <p><strong>Email:</strong> amriksingh.explains@gmail.com</p>
+          <p><strong>Website:</strong> amrikexplains.com</p>
+          <p><strong>Socials:</strong> YouTube & Instagram @AmrikExplains</p>
         </div>
       </div>
     </div>
 
-    <!-- Key Skills -->
-    <div class="section">
-      <h2>Core Skills</h2>
-      <div class="skills-list">
-        <div class="skill-tag">Hindi Scriptwriting</div>
-        <div class="skill-tag">News Research & Fact Checking</div>
-        <div class="skill-tag">Adobe Premiere Pro</div>
-        <div class="skill-tag">DaVinci Resolve</div>
-        <div class="skill-tag">Indian Polity & History Research</div>
-        <div class="skill-tag">Voiceover & Video Presenting</div>
-        <div class="skill-tag">Sociological Analysis</div>
-      </div>
+    <div class="footer">
+      © 2026 Amrik Singh • Amrik Explains Newsletter • Powered by Substack Style Layout
     </div>
-
-    <!-- Journey / Timeline -->
-    <div class="section">
-      <h2>Education & Experience Journey</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h4>YouTube & Instagram Content Creator</h4>
-          <span>March 2026 - Present</span>
-          <p>Current Affairs aur Explainer Short Videos par active storytelling.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>M.A. in Sociology & M.A. in History</h4>
-          <span>IGNOU</span>
-          <p>Social Structure, Cultural History aur Administrative Studies ki gehri study.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>Taj Khan Global Studies & Marketing Firm</h4>
-          <span>2024 - 2026</span>
-          <p>Content Production, Operations, aur Graphic/Marketing execution ka practical experience.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>B.A. Programme (History & Polity) & UPSC Civil Services Preparation</h4>
-          <span>2016 - 2022</span>
-          <p>Constitutional Framework, History, aur Polity analysis ki solid foundation.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact & Pitch -->
-    <div class="section" style="text-align: center;">
-      <h2>Let's Connect!</h2>
-      <p>Agar aapko Hindi Scriptwriting, Video Research, ya Digital News Production ke liye passionate candidate chahiye, toh zaroor reach out karein.</p>
-      <a href="mailto:amriksingh.explains@gmail.com" class="btn">Email Me Direct</a>
-    </div>
-
   </div>
-
-  <footer>
-    © 2026 Amrik Singh | amrikexplains.com
-  </footer>
 
 </body>
 </html>
